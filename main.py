@@ -40,7 +40,7 @@ model = ChatOllama(
 
 chain = prompt | model | parser
 
-loader = PyPDFLoader("Kusuma_M_1SI22CI021_CSE-AIML_SIT.pdf")
+loader = PyPDFLoader("resume.pdf")
 documents = loader.load()
 
 resume_text = "\n".join([doc.page_content for doc in documents])
@@ -50,3 +50,4 @@ try:
     print(json.dumps(result, indent=4))
 except Exception as e:
     print("Parsing Error:", str(e))
+
